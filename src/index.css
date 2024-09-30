@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --vfe-background-primary: #37393F;
+
+    --vfe-background: 0 0% 100%;
+
+    --vfe-foreground: 0 0% 3.9%;
+
+    --vfe-card: 0 0% 100%;
+
+    --vfe-card-foreground: 0 0% 3.9%;
+
+    --vfe-popover: 0 0% 100%;
+
+    --vfe-popover-foreground: 0 0% 3.9%;
+
+    --vfe-primary: 0 0% 9%;
+
+    --vfe-primary-foreground: 0 0% 98%;
+
+    --vfe-secondary: 0 0% 96.1%;
+
+    --vfe-secondary-foreground: 0 0% 9%;
+
+    --vfe-muted: 0 0% 96.1%;
+
+    --vfe-muted-foreground: 0 0% 45.1%;
+
+    --vfe-accent: 0 0% 96.1%;
+
+    --vfe-accent-foreground: 0 0% 9%;
+
+    --vfe-destructive: 0 84.2% 60.2%;
+
+    --vfe-destructive-foreground: 0 0% 98%;
+
+    --vfe-border: 0 0% 89.8%;
+
+    --vfe-input: 0 0% 89.8%;
+
+    --vfe-ring: 0 0% 3.9%;
+
+    --vfe-chart-1: 12 76% 61%;
+
+    --vfe-chart-2: 173 58% 39%;
+
+    --vfe-chart-3: 197 37% 24%;
+
+    --vfe-chart-4: 43 74% 66%;
+
+    --vfe-chart-5: 27 87% 67%;
+
+    --vfe-radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply bg-[#7C36D6] px-2.5 py-2 text-sm rounded-lg disabled:opacity-50;
+  }
+}
