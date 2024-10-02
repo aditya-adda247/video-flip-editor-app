@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type RecordedData = {
+export type RecordedData = {
     timeStamp: number;  // assuming currentTime is a number
     coordinates: [number, number, number, number];  // x, y, width, height
     volume: number;

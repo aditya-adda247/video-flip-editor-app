@@ -7,19 +7,18 @@ import PreviewContainer from "./components/PreviewContainer";
 import Footer from "./components/Footer";
 
 const App: React.FC = () => {
-
-  const {selectedTab} = useSelector((state:RootState) => state.selectedTab)
+  const { selectedTab } = useSelector((state: RootState) => state.selectedTab);
 
   return (
-      <main className="h-screen flex flex-col justify-between bg-vfe-bg-primary">
-        <div>
+    <main className="h-screen flex flex-col justify-between bg-vfe-bg-primary text-white">
+      <div>
         <Header />
         {selectedTab === "generate-tab" ? <VideoPlayerContainer /> : null}
         {selectedTab === "preview-tab" ? <PreviewContainer /> : null}
-        </div>
+      </div>
 
-        {selectedTab === "generate-tab" ? <Footer /> : null}
-      </main>
+      {selectedTab === "generate-tab" ? <Footer /> : null}
+    </main>
   );
 };
 

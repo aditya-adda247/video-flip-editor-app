@@ -6,6 +6,7 @@ import { setSelectedTab } from "../store/tabSlice";
 const Header: React.FC = () => {
   const { selectedTab } = useSelector((state: RootState) => state.selectedTab);
   const dispatch = useDispatch();
+
   return (
     <nav className="w-11/12 container flex justify-between py-7">
       <h3 className="font-bold">Cropper</h3>

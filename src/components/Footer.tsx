@@ -1,23 +1,26 @@
+import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { exportToJson } from "../helpers/utils";
-import React from "react";
-import { RootState } from "../store/store";
-import { setIsOverlayActive } from "../store/videoConfigSlice";
 import { setRecordedData } from "../store/recordedDataSlice";
+import { RootState } from "../store/store";
 import { setSelectedTab } from "../store/tabSlice";
+import { setIsOverlayActive } from "../store/videoConfigSlice";
 
 const Footer: React.FC = () => {
- const {videoConfig, recordedDataState: {recordedData}} = useSelector((state:RootState)=> state)
- const dispatch = useDispatch();
+  const {
+    videoConfig,
+    recordedDataState: { recordedData },
+  } = useSelector((state: RootState) => state);
+  const dispatch = useDispatch();
 
-  const downloadPreview = () => {
+  const downloadPreview = useCallback(() => {
     exportToJson(recordedData);
-  };
+  }, [recordedData]);
 
-  const cancelPreview = () => {
-    dispatch(setRecordedData([]))
-    dispatch(setSelectedTab('generate-tab'))
-  };
+  const cancelPreview = useCallback(() => {
+    dispatch(setRecordedData([]));
+    dispatch(setSelectedTab("generate-tab"));
+  }, [dispatch]);
 
   return (
     <div className="py-7 border-t border-[#494C55]">

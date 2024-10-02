@@ -29,6 +29,8 @@ type VideoConfigState = {
   videoPlayer: VideoPlayerSize;
 };
 
+type VideoConfigUpdate = Partial<VideoConfigState>;
+
 const initialState: VideoConfigState = {
   isPlaying: false,
   currentTime: 0,
@@ -79,8 +81,11 @@ const videoConfigSlice = createSlice({
     setVideoPlayerSize(state, action: PayloadAction<VideoPlayerSize>) {
       state.videoPlayer = action.payload;
     },
-    setVideoConfig(state, action: PayloadAction<VideoConfigState>) {
-      state = {...state, ...action.payload};
+    setVideoConfig(state, action: PayloadAction<VideoConfigUpdate>) {
+      return {
+        ...state,
+        ...action.payload
+      };
     },
   },
 });
