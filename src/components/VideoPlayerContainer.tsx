@@ -111,6 +111,7 @@ export const VideoPlayerContainer = () => {
 
   const handleDrag = useCallback(
     (e: DraggableEvent, ui: DraggableData) => {
+      console.log(e);
       const { x, y } = ui;
       dispatch(setOverlayPosition({ x, y }));
     },
